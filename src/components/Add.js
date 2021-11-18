@@ -40,6 +40,8 @@ const Add = (props) => {
         <br />
         <label htmlFor="location">Location: </label>
         <input type="text" name="location"  value={trip.location} onChange={handleChange} />
+        <br />
+        <br />
         <input type="submit" />
       </form>
     </>

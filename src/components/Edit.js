@@ -8,7 +8,7 @@ const Edit = (props) => {
   const handleChange = (event) => {
     // if (event.target.name = "public" ) {
     //      setTrip({...trip, [event.target.name]: event.target.checked })
-    // } else { 
+    // } else {
     //      setTrip({...trip, [event.target.name]: event.target.value })
     // }
 
@@ -55,9 +55,12 @@ const Edit = (props) => {
           <br />
           <label htmlFor="location">Location: </label>
           <input type="text" name="location" value={trip.location} onChange={handleChange} />
+          <br />
+          <br />
           <input type="submit" />
         </form>
       </details>
+      <br />
     </>
   )
 }
