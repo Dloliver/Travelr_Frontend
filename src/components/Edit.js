@@ -1,14 +1,16 @@
 import React, {useState } from 'react'
 
 const Edit = (props) => {
-  let emptyTrip = {id: props.id, title: '', image_url: '', likes: '', public: 'true', description: '', location: ''}
+  let emptyTrip = {id: props.id, title: '', image_url: '', likes: '', public: false, description: '', location: ''}
   const [trip, setTrip] = useState(emptyTrip)
 
 
   const handleChange = (event) => {
-    setTrip({...trip, [event.target.name]: event.target.value })
+    if (event.target.name = "public" ) {
+         setTrip({...trip, [event.target.name]: event.target.checked })
+       } else { setTrip({...trip, [event.target.name]: event.target.value })
   }
-
+}
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -35,7 +37,7 @@ const Edit = (props) => {
           <br />
           <br />
           <label htmlFor="public">Public: </label>
-          <input type="checkbox" name="public" value={true} onChange={handleChange} />
+          <input type="checkbox" name="public" checked={trip.public} onChange={handleChange} />
           <br />
           <br />
           <label htmlFor="description">Description: </label>
