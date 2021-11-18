@@ -8,7 +8,7 @@ const App = () => {
 
   const getTravels = () => {
     axios
-      .get('http://localhost:8000/api/travelr')
+      .get('https://travelr-backend.herokuapp.com/api/posts')
       .then(
         (response) => setTravels(response.data),
         (err) => console.error(err)
@@ -18,7 +18,7 @@ const App = () => {
 
   const handleCreate = (addTrip) => {
     axios
-      .post('http://localhost:8000/api/travelr')
+      .post('https://travelr-backend.herokuapp.com/api/posts', addTrip)
       .then((response) => {
         console.log(response)
         getTravels()
@@ -27,7 +27,7 @@ const App = () => {
 
   const handleDelete = (event) => {
     axios
-      .delete('http://localhost:8000/api/travelr/' + event.target.value)
+      .delete('https://travelr-backend.herokuapp.com/api/posts/' + event.target.value)
       .then((response) => {
         getTravels()
       })
@@ -36,7 +36,7 @@ const App = () => {
   const handleUpdate = (editTrip) => {
     console.log(editTrip)
     axios
-      .put('http://localhost:8000/api/travelr/' + editTrip.id, editTrip)
+      .put('https://travelr-backend.herokuapp.com/api/posts/' + editTrip.id, editTrip)
       .then((response) => {
         getTravels()
       })
@@ -56,10 +56,11 @@ const App = () => {
         {travels.map((trip) => {
           return (
             <div className="trip" key={trip.id}>
-            <h4>Name: {trip.name}</h4>
+            <h4>Name: {trip.title}</h4>
             <h5>Image: {trip.image_url}</h5>
             <h5>Likes: {trip.likes}</h5>
             <h5>Public: {trip.public}</h5>
+            <h5>Description: {trip.description}</h5>
             <h5>Location: {trip.location}</h5>
             <Edit handleUpdate={handleUpdate} id={trip.id} />
             <button onClick={handleDelete} value={trip.id}>
