@@ -25,6 +25,7 @@ const Edit = (props) => {
 
   }
 
+  console.log("logged trip: ")
   console.log(trip)
 
 
