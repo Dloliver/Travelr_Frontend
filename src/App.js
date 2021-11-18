@@ -59,10 +59,10 @@ const App = () => {
             <h4>Name: {trip.title}</h4>
             <h5>Image: {trip.image_url}</h5>
             <h5>Likes: {trip.likes}</h5>
-            <h5>Public: {trip.public}</h5>
+            <h5>Public: {trip.public ? "true" : "false"}</h5>
             <h5>Description: {trip.description}</h5>
             <h5>Location: {trip.location}</h5>
-            <Edit handleUpdate={handleUpdate} id={trip.id} />
+            <Edit handleUpdate={handleUpdate} id={trip.id} trip={trip} />
             <button onClick={handleDelete} value={trip.id}>
             Remove Trip
             </button>
