@@ -17,6 +17,7 @@ const App = () => {
   }
 
   const handleCreate = (addTrip) => {
+    console.log(addTrip)
     axios
       .post('https://travelr-backend.herokuapp.com/api/posts', addTrip)
       .then((response) => {

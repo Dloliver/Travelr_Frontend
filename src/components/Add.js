@@ -1,17 +1,22 @@
 import React, {useState, useEffect} from 'react'
 
 const Add = (props) => {
-  let emptyTrip = {title: '', image_url: '', likes: '', public: '', description: '', location: ''}
+  let emptyTrip = {title: '', image_url: '', likes: '', public: false, description: '', location: ''}
   const [trip, setTrip] = useState(emptyTrip)
 
   const handleChange = (event) => {
     setTrip({...trip, [event.target.name]: event.target.value })
+  }
 
-}
+  const handleCheckBoxChange = (event) => {
+    setTrip({...trip, [event.target.name]: event.target.checked})
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault()
+    console.log(trip)
     props.handleCreate(trip)
-    setTrip({title: '', image_url: '', likes: '', public: '', description: '', location: ''})
+    setTrip({title: '', image_url: '', likes: '', public: false, description: '', location: ''})
   }
 
 
@@ -31,7 +36,7 @@ const Add = (props) => {
         <br />
         <br />
           <label htmlFor="public">Public: </label>
-          <input type="checkbox" name="public" value={trip.public} onChange={handleChange} />
+          <input type="checkbox" name="public" checked={trip.public} onChange={handleCheckBoxChange} />
         <br />
         <br />
           <label htmlFor="description">Description: </label>
