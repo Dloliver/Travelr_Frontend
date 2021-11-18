@@ -57,7 +57,7 @@ const App = () => {
           return (
             <div className="trip" key={trip.id}>
             <h4>Name: {trip.title}</h4>
-            <h5>Image: {trip.image_url}</h5>
+            <img src={trip.image_url}/>
             <h5>Likes: {trip.likes}</h5>
             <h5>Public: {trip.public ? "true" : "false"}</h5>
             <h5>Description: {trip.description}</h5>
