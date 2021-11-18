@@ -25,9 +25,6 @@ const Edit = (props) => {
 
   }
 
-  console.log(trip)
-
-
   return (
     <>
       <details>
