@@ -89,7 +89,8 @@ const App = () => {
       {currentUser ? <Add handleCreate={handleCreate} currentUser={currentUser}/> : null}
       <div className="travels">
         {travels.map((trip) => {
-          return (
+          return trip.public || trip.public == false && trip.user == currentUser ? 
+          (
             <div className="trip" key={trip.id}>
                <h4>{trip.title}</h4>
                <img src={trip.image_url}/>
@@ -102,7 +103,8 @@ const App = () => {
                Remove
                </button>
             </div>
-          )
+          ) 
+          : null 
         })}
       </div>
     </>
