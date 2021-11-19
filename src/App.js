@@ -20,6 +20,7 @@ const App = () => {
   }
 
   const handleCreate = (addTrip) => {
+    addTrip.user = currentUser
     console.log(addTrip)
     axios
       .post('https://travelr-backend.herokuapp.com/api/posts', addTrip)
@@ -62,7 +63,7 @@ const App = () => {
       if(response.data.email){
         console.log(response.data.email)
         alert('Welcome, ' + response.data.email)
-        setCurrentUser(reqBody.email)
+        setCurrentUser(response.data.email)
       }else{
         alert('Incorrect username or password.')
       }
@@ -80,7 +81,7 @@ const App = () => {
   return (
     <>
     <Header handleSignUp={handleSignUp} handleLogIn={handleLogIn} currentUser={currentUser}/>
-      <Add handleCreate={handleCreate} />
+      <Add handleCreate={handleCreate} currentUser={currentUser}/>
       <div className="travels">
         {travels.map((trip) => {
           return (
