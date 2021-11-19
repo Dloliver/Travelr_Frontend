@@ -29,30 +29,23 @@ const Edit = (props) => {
     <>
       <details>
         <summary>Edit Trip</summary>
-        <form onSubmit={handleSubmit}>
+        <form className="edit-form" onSubmit={handleSubmit}>
           <label htmlFor="title">Title: </label>
           <input type="text" name="title" value={trip.title} onChange={handleChange} />
-          <br />
           <br />
           <label htmlFor="image_url">Image: </label>
           <input type="text" name="image_url" value={trip.image_url} onChange={handleChange} />
           <br />
-          <br />
-          <label htmlFor="likes">Like: </label>
-          <input type="number" name="likes" value={trip.likes} onChange={handleChange} />
-          <br />
-          <br />
-          <label htmlFor="public">Public: </label>
-          <input type="checkbox" name="public" checked={trip.public} onChange={handleCheckBoxChange} />
-          <br />
-          <br />
           <label htmlFor="description">Description: </label>
           <input type="text" name="description" value={trip.description} onChange={handleChange} />
-          <br />
           <br />
           <label htmlFor="location">Location: </label>
           <input type="text" name="location" value={trip.location} onChange={handleChange} />
           <br />
+          <label htmlFor="likes">Like: </label>
+          <input type="number" name="likes" value={trip.likes} onChange={handleChange} />
+          <label className="public-label" htmlFor="public">Public: </label>
+          <input type="checkbox" name="public" checked={trip.public} onChange={handleCheckBoxChange} />
           <br />
           <input type="submit" />
         </form>

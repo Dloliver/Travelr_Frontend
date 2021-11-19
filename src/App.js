@@ -93,7 +93,7 @@ const App = () => {
                <h5>Location: {trip.location}</h5>
                <Edit handleUpdate={handleUpdate} id={trip.id} trip={trip} />
                <button onClick={handleDelete} value={trip.id}>
-               Remove Trip
+               Remove
                </button>
             </div>
           )

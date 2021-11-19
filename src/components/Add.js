@@ -22,7 +22,7 @@ const Add = (props) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="create-form" onSubmit={handleSubmit}>
         <label htmlFor="title">Title: </label>
         <input type="text" name="title" value={trip.title} onChange={handleChange}/>
         <br />
@@ -37,7 +37,7 @@ const Add = (props) => {
         <br />
         <label htmlFor="likes">Like: </label>
         <input type="number" name="likes" value={trip.likes} onChange={handleChange} />
-         <label htmlFor="public" id="public-label">Public: </label>
+         <label htmlFor="public" className="public-label">Public: </label>
          <input type="checkbox" name="public" checked={trip.public} onChange={handleCheckBoxChange} />
         <br />
         <input type="submit" />
