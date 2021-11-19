@@ -34,11 +34,16 @@
 }
 
 .button-container button {
-     margin: 0 5px;
+     margin: 0 10px;
 }
 
 .create-account {
-
+     position: absolute;
+     top: 101px;
+     right: 0px;
+     border: 1px solid black;
+     border-radius: 5px;
+     background-color: white;
 }
 
 .login {
@@ -46,6 +51,7 @@
      top: 101px;
      right: 0px;
      border: 1px solid black;
+     border-radius: 5px;
      background-color: white;
 }
 
