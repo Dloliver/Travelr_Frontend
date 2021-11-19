@@ -59,10 +59,16 @@ const App = () => {
     console.log(reqBody)
     axios.put('https:travelr-backend.herokuapp.com/api/useraccount/login', reqBody)
     .then((response) => {
-      console.log(response.data.email)
-      alert('Welcome, ' + response.data.email)
+      if(response.data.email){
+        console.log(response.data.email)
+        alert('Welcome, ' + response.data.email)
+        setCurrentUser(reqBody.email)
+      }else{
+        alert('Incorrect username or password.')
+      }
+      
     }).catch(() => {
-      alert('Incorrect username or password')
+      alert('Incorrect username or password.')
     })
   }
 
