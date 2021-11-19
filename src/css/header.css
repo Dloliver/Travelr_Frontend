@@ -11,6 +11,18 @@
      height: 100px;
 }
 
+h1 {
+     text-align: left;
+     margin-left: 25px;
+}
+
+h3 {
+     position: absolute;
+     right: 25px;
+     top: 5px;
+     margin-left: 35px
+}
+
 .auth {
      display: flex;
      flex-direction: column;

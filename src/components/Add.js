@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
 const Add = (props) => {
-  let emptyTrip = {title: '', image_url: '', likes: '', public: false, description: '', location: ''}
+  let emptyTrip = {title: '', image_url: '', likes: '', public: false, description: '', location: '', user: ''}
   const [trip, setTrip] = useState(emptyTrip)
 
   const handleChange = (event) => {
@@ -16,8 +16,12 @@ const Add = (props) => {
     event.preventDefault()
     console.log(trip)
     props.handleCreate(trip)
-    setTrip({title: '', image_url: '', likes: '', public: false, description: '', location: ''})
+    setTrip(emptyTrip)
   }
+
+  useEffect(() => {
+    setTrip({...trip, 'user': props.currentUser})
+  }, [])
 
 
   return (
@@ -37,8 +41,8 @@ const Add = (props) => {
         <br />
         <label htmlFor="likes">Like: </label>
         <input type="number" name="likes" value={trip.likes} onChange={handleChange} />
-         <label htmlFor="public" className="public-label">Public: </label>
-         <input type="checkbox" name="public" checked={trip.public} onChange={handleCheckBoxChange} />
+        <label htmlFor="public" className="public-label">Public: </label>
+        <input type="checkbox" name="public" checked={trip.public} onChange={handleCheckBoxChange} />
         <br />
         <input type="submit" />
       </form>

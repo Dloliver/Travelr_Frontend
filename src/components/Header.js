@@ -47,10 +47,13 @@ const Header = (props) => {
           <>
           <div className="header">
                <h1>Travelr</h1>
-               <h3>{props.currentUser}</h3>
-               <div className="button-container">
+               { props.currentUser ? <h3>Hello, {props.currentUser}</h3> : null}
+               <div className={props.currentUser ? "hidden" : "button-container" }>
                     <button id="sign-up" onClick={handleButtonToggle}>Sign Up</button>
                     <button id="log-in" onClick={handleButtonToggle}>Log In</button>
+               </div>
+               <div className={props.currentUser ? "button-container" : "hidden"}>
+                    <button onClick={props.handleLogOut}>Log Out</button>
                </div>
           </div>
 
