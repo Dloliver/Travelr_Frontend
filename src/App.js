@@ -57,16 +57,16 @@ const App = () => {
         {travels.map((trip) => {
           return (
             <div className="trip" key={trip.id}>
-            <h4>Name: {trip.title}</h4>
-            <img src={trip.image_url}/>
-            <h5>Likes: {trip.likes}</h5>
-            <h5>Public: {trip.public ? "true" : "false"}</h5>
-            <h5>Description: {trip.description}</h5>
-            <h5>Location: {trip.location}</h5>
-            <Edit handleUpdate={handleUpdate} id={trip.id} trip={trip} />
-            <button onClick={handleDelete} value={trip.id}>
-            Remove Trip
-            </button>
+               <h4>{trip.title}</h4>
+               <img src={trip.image_url}/>
+               <h5>Likes: {trip.likes}</h5>
+               <h5>{trip.public ? "Public" : "Private"}</h5>
+               <h5>{trip.description}</h5>
+               <h5>Location: {trip.location}</h5>
+               <Edit handleUpdate={handleUpdate} id={trip.id} trip={trip} />
+               <button onClick={handleDelete} value={trip.id}>
+               Remove Trip
+               </button>
             </div>
           )
         })}
