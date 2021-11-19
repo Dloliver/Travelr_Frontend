@@ -84,17 +84,17 @@ button {
    flex-wrap: wrap;
 }
 .trip {
-   width: 31.8%;
+   width: 32%;
    padding: .2em;
    border: 2px solid #708D81;
    border-radius: 10px;
    background-color: #001427;
-   margin: .3%;
+   margin: .2%;
    text-align: center;
    float: left;
 }
 .trip img {
-   width: 98%;
+   width: 99%;
    height: 320px;
 }
 h4 {
