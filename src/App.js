@@ -7,6 +7,7 @@ import Header from './components/Header'
 
 const App = () => {
   let [travels, setTravels] = useState([])
+  const [currentUser, setCurrentUser] = useState('')
 
   const getTravels = () => {
     axios
@@ -44,7 +45,26 @@ const App = () => {
         getTravels()
       })
   }
+  
+  ///////// LOGIN AND SIGN UP FUNCTIONALITY /////////
+  const handleSignUp = (reqBody) => {
+    axios.post('https://travelr-backend.herokuapp.com/api/useraccount', reqBody)
+    .then(() => {
+      alert('Welcome, ' + reqBody.email)
+      setCurrentUser(reqBody.email)
+    })
+  }
 
+  const handleLogIn = (reqBody) => {
+    console.log(reqBody)
+    axios.put('https:travelr-backend.herokuapp.com/api/useraccount/login', reqBody)
+    .then((response) => {
+      console.log(response.data.email)
+      alert('Welcome, ' + response.data.email)
+    }).catch(() => {
+      alert('Incorrect username or password')
+    })
+  }
 
 
   useEffect(() => {
@@ -53,7 +73,7 @@ const App = () => {
 
   return (
     <>
-    <Header />
+    <Header handleSignUp={handleSignUp} handleLogIn={handleLogIn} currentUser={currentUser}/>
       <Add handleCreate={handleCreate} />
       <div className="travels">
         {travels.map((trip) => {
