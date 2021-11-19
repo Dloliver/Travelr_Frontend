@@ -47,7 +47,7 @@ const App = () => {
       })
   }
   
-  ///////// LOGIN AND SIGN UP FUNCTIONALITY /////////
+  ///////// LOGIN, SIGN UP, AND LOGOUT FUNCTIONALITY /////////
   const handleSignUp = (reqBody) => {
     axios.post('https://travelr-backend.herokuapp.com/api/useraccount', reqBody)
     .then(() => {
@@ -73,6 +73,11 @@ const App = () => {
     })
   }
 
+  const handleLogOut = () => {
+    setCurrentUser('')
+    alert("You have been logged out.")
+  }
+
 
   useEffect(() => {
     getTravels()
@@ -80,8 +85,8 @@ const App = () => {
 
   return (
     <>
-    <Header handleSignUp={handleSignUp} handleLogIn={handleLogIn} currentUser={currentUser}/>
-      <Add handleCreate={handleCreate} currentUser={currentUser}/>
+    <Header handleSignUp={handleSignUp} handleLogIn={handleLogIn} handleLogOut={handleLogOut} currentUser={currentUser}/>
+      {currentUser ? <Add handleCreate={handleCreate} currentUser={currentUser}/> : null}
       <div className="travels">
         {travels.map((trip) => {
           return (
