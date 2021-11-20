@@ -3,7 +3,6 @@ import axios from 'axios'
 import Add from './components/Add'
 import Edit from './components/Edit'
 import Header from './components/Header'
-import GoogleMap from './components/Maps'
 import Modal from './components/Modals'
 
 const App = () => {

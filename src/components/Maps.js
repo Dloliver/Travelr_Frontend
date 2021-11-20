@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, useState} from 'react'
 
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 
@@ -8,6 +8,8 @@ import PlacesAutocomplete, {
 } from 'react-places-autocomplete';
 
 export class MapContainer extends Component {
+
+
   constructor(props) {
     super(props);
     this.state = { address: '',

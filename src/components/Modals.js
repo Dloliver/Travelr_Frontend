@@ -1,11 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import '../css/Modals.css'
 
 import GoogleMap from './Maps'
 
 const Modal = (props) => {
-  const [show, setShow] = useState(false)
-
 
   if(!props.show) {
     return null
@@ -23,7 +21,7 @@ const Modal = (props) => {
 
             <GoogleMap />
           </div>
-          
+
         </div>
     </div>
     </div>
