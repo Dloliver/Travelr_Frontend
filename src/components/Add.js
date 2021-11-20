@@ -37,7 +37,9 @@ const Add = (props) => {
 
   return (
     <>
-      <button onClick={handleButtonToggle}>Create Post</button>
+      <div id="create-post">
+         <button onClick={handleButtonToggle}>Create Post</button>
+      </div>
       <div className={createFormHidden ? "hidden" : "create-form"}>
          <form onSubmit={handleSubmit}>
            <label htmlFor="title">Title: </label>
