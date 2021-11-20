@@ -4,7 +4,6 @@ import Add from './components/Add'
 import Edit from './components/Edit'
 import Header from './components/Header'
 
-
 const App = () => {
   let [travels, setTravels] = useState([])
   const [currentUser, setCurrentUser] = useState('')
@@ -46,7 +45,7 @@ const App = () => {
         getTravels()
       })
   }
-  
+
   ///////// LOGIN, SIGN UP, AND LOGOUT FUNCTIONALITY /////////
   const handleSignUp = (reqBody) => {
     axios.post('https://travelr-backend.herokuapp.com/api/useraccount', reqBody)
@@ -67,7 +66,7 @@ const App = () => {
       }else{
         alert('Incorrect username or password.')
       }
-      
+
     }).catch(() => {
       alert('Incorrect username or password.')
     })
@@ -77,7 +76,6 @@ const App = () => {
     setCurrentUser('')
     alert("You have been logged out.")
   }
-
 
   useEffect(() => {
     getTravels()
@@ -89,7 +87,7 @@ const App = () => {
       {currentUser ? <Add handleCreate={handleCreate} currentUser={currentUser}/> : null}
       <div className="travels">
         {travels.map((trip) => {
-          return trip.public || trip.public == false && trip.user == currentUser ? 
+          return trip.public || trip.public == false && trip.user == currentUser ?
           (
             <div className="trip" key={trip.id}>
                <h4>{trip.title}</h4>
@@ -103,8 +101,8 @@ const App = () => {
                Remove
                </button>
             </div>
-          ) 
-          : null 
+          )
+          : null
         })}
       </div>
     </>
