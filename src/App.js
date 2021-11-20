@@ -3,10 +3,13 @@ import axios from 'axios'
 import Add from './components/Add'
 import Edit from './components/Edit'
 import Header from './components/Header'
+import Modal from './components/Modals'
+
 
 const App = () => {
   let [travels, setTravels] = useState([])
   const [currentUser, setCurrentUser] = useState('')
+  const [show, setShow] = useState(false)
 
   const getTravels = () => {
     axios
@@ -96,6 +99,8 @@ const App = () => {
                <h5>{trip.public ? "Public" : "Private"}</h5>
                <h5>{trip.description}</h5>
                <h5>Location: {trip.location}</h5>
+                 <button onClick={() => setShow(true)}>Show Modal</button>
+                 <Modal onClose={() => setShow(false)} show={show} />
                <Edit handleUpdate={handleUpdate} id={trip.id} trip={trip} />
                <button onClick={handleDelete} value={trip.id}>
                Remove
