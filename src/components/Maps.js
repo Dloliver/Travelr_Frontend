@@ -1,5 +1,4 @@
 import React, {Component, useState} from 'react'
-
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 import PlacesAutocomplete, {
@@ -83,7 +82,6 @@ export class MapContainer extends Component {
         )}
       </PlacesAutocomplete>
 
-
       <Map google={this.props.google}
       initialCenter={{
         lat: this.state.mapCenter.lat,
@@ -93,6 +91,13 @@ export class MapContainer extends Component {
       center={{
         lat: this.state.mapCenter.lat,
         lng: this.state.mapCenter.lng
+      }}
+
+      zoom={14}
+
+      containerStyle={{
+        width: '50%',
+        height: '50%'
       }}
       >
         <Marker
@@ -110,5 +115,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: ('AIzaSyAnIcn85NaVfFA6zY5seW01oWrHwLhf4Qk')
+  apiKey: (process.env.REACT_APP_MAPS_KEY)
 })(MapContainer)

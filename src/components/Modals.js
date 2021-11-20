@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/Modals.css'
 
-import GoogleMap from './Maps'
+import MapContainer from './Maps'
 
 const Modal = (props) => {
 
@@ -19,7 +19,7 @@ const Modal = (props) => {
           <div class="modal-body">
           <button onClick={props.onClose} class="button">Close</button>
 
-            <GoogleMap />
+            <MapContainer />
           </div>
 
         </div>
