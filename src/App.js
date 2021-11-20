@@ -5,6 +5,7 @@ import Edit from './components/Edit'
 import Header from './components/Header'
 import Modal from './components/Modals'
 
+
 const App = () => {
   let [travels, setTravels] = useState([])
   const [currentUser, setCurrentUser] = useState('')
@@ -78,7 +79,6 @@ const App = () => {
     setCurrentUser('')
     alert("You have been logged out.")
   }
-
 
   useEffect(() => {
     getTravels()
