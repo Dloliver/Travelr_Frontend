@@ -4,15 +4,18 @@ left: 0;
 top: 0;
 right: 0;
 bottom: 0;
-background-color: rgba(0, 0, 0, 0.5);
+background-color: rgba(197,222,221, 0.5);
 display: flex;
 align-items: center;
 justify-content: center;
+border-radius: 15px;
 }
 
 .modal-content {
-  width: 500px;
-  background-color: #fff;
+  width: 700px;
+  background-color:  #001427;
+  height: 700px;
+  border-radius: 15px;
 }
 
 .modal-header, . modal-footer {
@@ -33,10 +36,13 @@ justify-content: center;
 .modal-content button {
   margin: 5px;
   text-transform: uppercase;
-  background: #001427;
+  background: #708D81;
   color: white;
 }
 #googleMap input {
    border-radius: 5px;
+}
 
+h4 {
+  font-size: 30px;
 }
