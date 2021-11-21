@@ -49,6 +49,14 @@ const App = () => {
       })
   }
 
+  const handleLike = (e, post, likes) => {
+    axios.put('https://travelr-backend.herokuapp.com/api/posts/' + e.target.value, {...post, 'likes': likes + 1})
+    .then((err) => {
+      getTravels()
+    })
+
+  }
+
   ///////// LOGIN, SIGN UP, AND LOGOUT FUNCTIONALITY /////////
   const handleSignUp = (reqBody) => {
     axios.post('https://travelr-backend.herokuapp.com/api/useraccount', reqBody)
@@ -95,14 +103,19 @@ const App = () => {
             <div className="trip" key={trip.id}>
                <h4>{trip.title}</h4>
                <img src={trip.image_url}/>
-               <h5>Likes: {trip.likes}</h5>
-               <h5>{trip.public ? "Public" : "Private"}</h5>
+               <div id="likes-wrap">
+                  <button onClick={(e) => {handleLike(e, trip, trip.likes)}} value={trip.id}>Like</button>
+                  <h5 id="num-likes">Likes: {trip.likes}</h5>
+                  <h5>{trip.public ? "Public" : "Private"}</h5>
+               </div>
                <h5>{trip.description}</h5>
-               <h5>Location: {trip.location}</h5>
-                 <button onClick={() => setShow(true)}>Show Modal</button>
-                 <Modal onClose={() => setShow(false)} show={show} />
+               <div id="location-wrap">
+                  <h5>Location: {trip.location}</h5>
+                  <button onClick={() => setShow(true)}>Show Map</button>
+                  <Modal onClose={() => setShow(false)} show={show} />
+               </div>
                <Edit handleUpdate={handleUpdate} id={trip.id} trip={trip} />
-               <button onClick={handleDelete} value={trip.id}>
+               <button id="remove-btn" onClick={handleDelete} value={trip.id}>
                Remove
                </button>
             </div>

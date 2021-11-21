@@ -42,7 +42,7 @@ const Edit = (props) => {
           <label htmlFor="location">Location: </label>
           <input type="text" name="location" value={trip.location} onChange={handleChange} />
           <br />
-          <label htmlFor="likes">Like: </label>
+          <label htmlFor="likes">Likes: </label>
           <input type="number" name="likes" value={trip.likes} onChange={handleChange} />
           <label className="public-label" htmlFor="public">Public: </label>
           <input type="checkbox" name="public" checked={trip.public} onChange={handleCheckBoxChange} />

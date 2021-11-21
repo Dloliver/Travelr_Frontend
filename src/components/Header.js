@@ -39,10 +39,10 @@ const Header = (props) => {
           e.preventDefault()
           setSignUpHidden(true)
           setLogInHidden(true)
-          props.handleSignUp(body) // lifts email and pass up to app.js 
+          props.handleSignUp(body) // lifts email and pass up to app.js
           setBody(emptyBody)
      }
-     
+
      return (
           <>
           <div className="header">
@@ -63,17 +63,17 @@ const Header = (props) => {
                     <input type="text" name="email" onChange={handleInputOnChange}/>
                     <label>Password: </label>
                     <input type="password" name="password" onChange={handleInputOnChange}/><br />
-                    <input type="submit" value="Create Account"/> 
+                    <input type="submit" value="Create Account"/>
                </form>
           </div>
-          
+
           <div className={logInHidden ? "hidden" : "login"}>
                <form className="auth" onSubmit={handleLogInSubmit}>
                     <label>Username: </label>
                     <input type="text" name="email" onChange={handleInputOnChange}/>
                     <label>Password: </label>
                     <input type="password" name="password" onChange={handleInputOnChange}/><br />
-                    <input type="submit" value="Log in"/> 
+                    <input type="submit" value="Log in"/>
                </form>
           </div>
           </>
