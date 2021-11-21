@@ -34,7 +34,8 @@
    border-radius: 5px;
    border-color: transparent;
 }
-.create-account input[type="submit"], .login input[type="submit"] {
+.create-account input[type="submit"],
+.login input[type="submit"] {
    background: #001427;
    border-radius: 5px;
    color: lightgrey;
