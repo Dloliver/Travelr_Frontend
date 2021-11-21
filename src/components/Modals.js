@@ -17,9 +17,9 @@ const Modal = (props) => {
           <h4 class="modal-title"> Location </h4>
           </div>
           <div class="modal-body">
-          <button onClick={props.onClose} class="button">Close</button>
+             <button onClick={props.onClose} class="button">Close</button>
 
-            <MapContainer />
+             <MapContainer />
           </div>
 
         </div>
