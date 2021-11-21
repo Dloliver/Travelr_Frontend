@@ -1,7 +1,7 @@
 # Travelr
 
 ### Description
-A story and photo-sharing app allowing user to share experiences, with features including like buttons and location tags.
+A story and photo-sharing app allowing user to share experiences, with features including like buttons and location tags with Google Map.
    * User will be able to create new experiences with photos, location, and brief message
    * User will be able to view/read and like posts
    * User will be able to update and delete posts
