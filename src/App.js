@@ -54,7 +54,7 @@ const App = () => {
     .then((err) => {
       getTravels()
     })
-    
+
   }
 
   ///////// LOGIN, SIGN UP, AND LOGOUT FUNCTIONALITY /////////
@@ -103,15 +103,19 @@ const App = () => {
             <div className="trip" key={trip.id}>
                <h4>{trip.title}</h4>
                <img src={trip.image_url}/>
-               <button onClick={(e) => {handleLike(e, trip, trip.likes)}} value={trip.id}>Like</button>
-               <h5>Likes: {trip.likes}</h5>
-               <h5>{trip.public ? "Public" : "Private"}</h5>
+               <div id="likes-wrap">
+                  <button onClick={(e) => {handleLike(e, trip, trip.likes)}} value={trip.id}>Like</button>
+                  <h5 id="num-likes">Likes: {trip.likes}</h5>
+                  <h5>{trip.public ? "Public" : "Private"}</h5>
+               </div>
                <h5>{trip.description}</h5>
-               <h5>Location: {trip.location}</h5>
-               <button onClick={() => setShow(true)}>Show Modal</button>
-               <Modal onClose={() => setShow(false)} show={show} />
+               <div id="location-wrap">
+                  <h5>Location: {trip.location}</h5>
+                  <button onClick={() => setShow(true)}>Show Map</button>
+                  <Modal onClose={() => setShow(false)} show={show} />
+               </div>
                <Edit handleUpdate={handleUpdate} id={trip.id} trip={trip} />
-               <button onClick={handleDelete} value={trip.id}>
+               <button id="remove-btn" onClick={handleDelete} value={trip.id}>
                Remove
                </button>
             </div>
