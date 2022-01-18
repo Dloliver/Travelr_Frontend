@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <p align="center">
    <img src="https://i.imgur.com/4Y0phoj.png"/>
 </p>
@@ -15,7 +14,7 @@ Travelr is story and photo-sharing app allowing user to share experiences, with 
 ### Links
 * [Website](https://travelr-frontend.herokuapp.com/)
 * [Backend API](https://travelr-backend.herokuapp.com/api/posts)
-* [GitHub Frontend](https://github.com/Dloliver/Travelr_Frontend/tree/dev)
+* [GitHub Frontend](https://github.com/Dloliver/Travelr_Frontend)
 * [GitHub Backend](https://github.com/abszer/travelr-backend)
 
 ## Main Components of the App:
